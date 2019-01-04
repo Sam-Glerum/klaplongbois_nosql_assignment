@@ -1,17 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const VotingSchema = require('./user'); // IMPLEMENT THIS..
 
 const ThreadSchema = new Schema({
     title: String,
     content: String,
-    upvotes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'user'
-    }],
-    downvotes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'user'
-    }],
+    votes: [VotingSchema],
     comments: [{
         type: Schema.Types.ObjectId,
         ref: 'comment'

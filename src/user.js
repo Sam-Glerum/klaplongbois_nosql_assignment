@@ -3,6 +3,14 @@ const Schema = mongoose.Schema;
 // const ApiErrors = require('../model/apiErrors');
 // const jsonModel = require('../model/JsonResponseModel');
 
+const VotingSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+    },
+    vote: Boolean
+});
+
 const UserSchema = new Schema({
     username: String,
     password: String,
