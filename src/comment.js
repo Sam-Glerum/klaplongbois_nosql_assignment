@@ -12,13 +12,9 @@ const CommentSchema = new Schema({
         ref: 'thread'
     },
     content: String,
-    upvotes: [{
+    vote: [{
         type: Schema.Types.ObjectId,
-        ref: 'user'
-    }],
-    downvotes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'vote'
     }],
     comments: {
         type: this,
